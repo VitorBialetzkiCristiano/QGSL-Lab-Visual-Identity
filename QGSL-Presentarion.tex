@@ -1,0 +1,88 @@
+\documentclass[10pt, aspectratio=169]{beamer}
+
+% --- Pacotes de Fontes e Idioma ---
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{graphicx} 
+\usepackage{tikz}
+\usepackage{mathpazo} 
+
+% --- Definição do Caminho da Imagem  ---
+\graphicspath{{/Users/Vitor/Downloads/}}
+
+% --- Definição das Cores Oficiais (Bordô e Dourado) ---
+\definecolor{UFVRed}{RGB}{128, 0, 0}      % Bordô / Vinho
+\definecolor{UFVYellow}{RGB}{184, 134, 11} % Dourado Ouro
+
+% --- Configurações Gerais do Tema ---
+\setbeamertemplate{navigation symbols}{} % Remove ícones de navegação desnecessários
+\setbeamercolor{background canvas}{bg=white}
+
+% Estilo dos Tópicos
+\setbeamercolor{itemize item}{fg=UFVRed}
+\setbeamercolor{subitemize item}{fg=UFVRed}
+\setbeamertemplate{itemize items}{\small$\blacktriangleright$} 
+
+% Configura o estilo clássico/quadrado para os blocos
+\setbeamertemplate{blocks}[default]
+
+\definecolor{UFVRed}{RGB}{120, 0, 0}
+
+\setbeamercolor{block title}{fg=white, bg=UFVRed}
+\setbeamercolor{block body}{fg=black, bg=gray!8}
+
+% --- Cabeçalho  ---
+\setbeamertemplate{frametitle}{
+    \begin{minipage}{\textwidth}
+        \begin{tikzpicture}[remember picture,overlay]
+            % 1. Filete dourado de destaque
+            \fill[UFVYellow] ([xshift=0.8cm,yshift=-0.6cm]current page.north west) rectangle ([xshift=0.92cm,yshift=-1.4cm]current page.north west);
+            
+            % 2. Título principal (Encostado no filete dourado)
+            \node[anchor=west, font=\Large\bfseries, text=UFVRed, inner sep=0pt] 
+                at ([xshift=1.05cm,yshift=-0.85cm]current page.north west) {\insertframetitle};
+            
+            % 3. Subtítulo (Se houver)
+            \ifx\insertframesubtitle\@empty\else
+                \node[anchor=west, font=\footnotesize\bfseries, text=UFVRed, inner sep=0pt] 
+                    at ([xshift=1.05cm,yshift=-1.25cm]current page.north west) {\insertframesubtitle};
+            \fi
+            
+            % 4. Logo Lab no canto superior direito
+            \node[anchor=north east] at ([xshift=-0.5cm,yshift=-0.2cm]current page.north east) {
+                \includegraphics[height=1.2cm]{LogoLab2.jpeg}
+            };
+        \end{tikzpicture}
+    \end{minipage}
+    \vspace*{0.4cm} % Espaço seguro para o conteúdo do slide não subir
+}
+% ---  Capa ---
+\title[Mate Allocation for Maize]{Predicting Population Performance and Genetic Variance to Guide Optimal Mate Allocation for Drought Tolerance in Maize}
+\author{Vitor Bialetzki Cristiano}
+\institute{Advisor: Dr. Kaio Olimpio das Graças Dias}
+
+\begin{document}
+
+% --- Slide ---
+{
+\setbeamertemplate{frametitle}{} % Remove o cabeçalho neste slide
+\begin{frame}
+    \centering
+    \vspace{0.5cm}
+    \includegraphics[height=1.8cm]{LogoLab2.jpeg} \\
+    \vspace{0.4cm}
+    \textcolor{UFVRed}{\large \textbf{DISSERTATION PROJECT}} \\
+    \vspace{0.5cm}
+    \textcolor{UFVRed}{\Large \textbf{\inserttitle}} \\
+    \vspace{0.6cm}
+    \textbf{\insertauthor} \\
+    \vspace{0.2cm}
+    \small \insertinstitute \\
+    \vspace{0.4cm}
+    \small Viçosa - MG
+\end{frame}
+}
