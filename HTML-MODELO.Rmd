@@ -124,16 +124,16 @@ p {
 @media (min-width: 1200px) {
   .main-container { 
     max-width: 900px !important; 
-    margin-left: 280px !important;
+    margin-left: auto !important;
     margin-right: auto !important;
     padding-top: 215px !important; 
   } 
 
-  /* SUMÁRIO FLUTUANTE NA MARGEM ESQUERDA */
+  /* SUMÁRIO FLUTUANTE ACOMPANHANDO O CONTEÚDO CENTRALIZADO */
   #TOC {
     position: fixed !important;
     top: 215px !important;
-    left: 25px !important;
+    left: max(20px, calc(50% - 720px)) !important;
     width: 230px !important;
     max-height: calc(100vh - 240px) !important;
     overflow-y: auto !important;
